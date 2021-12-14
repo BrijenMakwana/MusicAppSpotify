@@ -19,6 +19,8 @@ import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
+import { Entypo,EvilIcons,FontAwesome5 } from '@expo/vector-icons';
+
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
     <NavigationContainer
@@ -63,33 +65,36 @@ function BottomTabNavigator() {
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}>
       <BottomTab.Screen
-        name="TabOne"
+        name="Home"
         component={TabOneScreen}
-        options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate('Modal')}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}>
-              <FontAwesome
-                name="info-circle"
-                size={25}
-                color={Colors[colorScheme].text}
-                style={{ marginRight: 15 }}
-              />
-            </Pressable>
-          ),
-        })}
+        options={{
+          title: 'Home',
+          tabBarIcon: ({ color }) => <Entypo name="home" size={30} color={color} style={{ marginBottom: -3 }} />,
+         
+}}
       />
       <BottomTab.Screen
-        name="TabTwo"
+        name="Search"
         component={TabTwoScreen}
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Search',
+          tabBarIcon: ({ color }) => <EvilIcons name="search" size={30} color={color} style={{ marginBottom: -3 }}/>,
+        }}
+      />
+      <BottomTab.Screen
+        name="YourLibrary"
+        component={TabTwoScreen}
+        options={{
+          title: 'Search',
+          tabBarIcon: ({ color }) => <FontAwesome5 name="music" size={30} color={color} style={{ marginBottom: -3 }}/>,
+        }}
+      />
+      <BottomTab.Screen
+        name="Premium"
+        component={TabTwoScreen}
+        options={{
+          title: 'Search',
+          tabBarIcon: ({ color }) => <FontAwesome5 name="spotify" size={30} color={color} style={{ marginBottom: -3 }} />,
         }}
       />
     </BottomTab.Navigator>
