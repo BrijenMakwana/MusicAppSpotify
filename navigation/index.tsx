@@ -85,7 +85,7 @@ function BottomTabNavigator() {
         name="YourLibrary"
         component={TabTwoScreen}
         options={{
-          title: 'Search',
+          title: 'Your Library',
           tabBarIcon: ({ color }) => <FontAwesome5 name="music" size={30} color={color} style={{ marginBottom: -3 }}/>,
         }}
       />
@@ -93,7 +93,7 @@ function BottomTabNavigator() {
         name="Premium"
         component={TabTwoScreen}
         options={{
-          title: 'Search',
+          title: 'Premium',
           tabBarIcon: ({ color }) => <FontAwesome5 name="spotify" size={30} color={color} style={{ marginBottom: -3 }} />,
         }}
       />
