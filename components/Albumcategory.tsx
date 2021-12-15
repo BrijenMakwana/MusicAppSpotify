@@ -10,7 +10,7 @@ import AlbumComponent from './AlbumComponent';
 export type AlbumCategoryProps={
     albumCategory:{
         title: string,
-        albums: [Album]
+        albums: Album[]
     }
    
     
@@ -25,6 +25,7 @@ export default function AlbumCategory(props: AlbumCategoryProps) {
             renderItem={({item})=><AlbumComponent album={item}/>}
             keyExtractor={item => item.id}
             horizontal
+            showsHorizontalScrollIndicator={false}
       />
       </View>
    

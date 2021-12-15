@@ -19,7 +19,7 @@ export default function AlbumComponent(props: AlbumProps) {
         }}
         style={styles.image}
      />
-      <Text style={styles.title}>{props.album.artistHeadline}</Text>
+      <Text style={styles.title} numberOfLines={2}>{props.album.artistsHeadline}</Text>
       
     </View>
   );
@@ -28,7 +28,7 @@ export default function AlbumComponent(props: AlbumProps) {
 const styles = StyleSheet.create({
   container: {
     width:155,
-    padding:10
+    padding:11
   },
   title: {
     fontSize: 20,
@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
     marginTop:15
   },
   image:{
-    width:"100%",
-    height:155
+    width:140,
+    height:140,
     
   }
   ,
