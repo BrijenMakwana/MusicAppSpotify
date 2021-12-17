@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { StyleSheet,Text, View ,FlatList} from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
-import {  } from '../components/Themed';
+
 import { Album } from '../types';
 
 import AlbumComponent from './AlbumComponent';
 
 export type AlbumCategoryProps={
     albumCategory:{
+        id:string;
         title: string,
         albums: Album[]
     }
@@ -19,7 +19,9 @@ export type AlbumCategoryProps={
 export default function AlbumCategory(props: AlbumCategoryProps) {
   return (
       <View>
+        {/* category title */}
           <Text style={styles.title}>{props.albumCategory.title}</Text>
+          {/* render all album component */}
         <FlatList
             data={props.albumCategory.albums}
             renderItem={({item})=><AlbumComponent album={item}/>}

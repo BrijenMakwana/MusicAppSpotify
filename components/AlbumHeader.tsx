@@ -1,30 +1,32 @@
 import { useRoute } from '@react-navigation/native';
 import React, { useEffect } from 'react';
 import { FlatList, StyleSheet, View,Image,Text, Button, TouchableOpacity } from 'react-native';
-
+import {Album} from '../types';
 
 import albumDetails from '../assets/data/albumDetails';
 import SongListItem from '../components/SongListItem';
 
+export type AlbumHeaderProps={
+  album: Album
+}
 
-
-export default function AlbumHeader() {
+export default function AlbumHeader(props: AlbumHeaderProps) {
 
   
   
 
   return (
-    
+    // album header
       <View style={styles.albumContainer}>
         <Image
           source={{
-            uri: albumDetails.imageUri
+            uri: props.album.imageUri
           }}
 
           style={styles.album}
         />
-        <Text style={styles.albumName}>{albumDetails.name}</Text>
-        <Text style={styles.by}>BY {albumDetails.by} . {albumDetails.numberOfLikes} LIKES</Text>
+        <Text style={styles.albumName}>{props.album.name}</Text>
+        <Text style={styles.by}>BY {props.album.by} . {props.album.numberOfLikes} LIKES</Text>
         <TouchableOpacity>
           <View style={styles.button}>
               <Text style={{color:"white",fontWeight:"600",textTransform:"uppercase"}}>play</Text>

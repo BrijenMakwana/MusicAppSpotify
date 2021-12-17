@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { StyleSheet,Text, View ,Image,TouchableWithoutFeedback} from 'react-native';
 
-import EditScreenInfo from './EditScreenInfo';
-import {  } from './Themed';
+
 import { Album } from '../types';
 import { useNavigation } from '@react-navigation/native';
 
@@ -14,7 +13,7 @@ export type AlbumProps={
 export default function AlbumComponent(props: AlbumProps) {
 
   const navigation = useNavigation();
-const onPress = () =>{
+  const onPress = () =>{
   navigation.navigate("Album",);
 }
   return (

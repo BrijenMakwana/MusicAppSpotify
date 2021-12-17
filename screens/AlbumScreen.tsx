@@ -5,6 +5,7 @@ import { FlatList, StyleSheet, View,Image,Text, Button, TouchableOpacity } from 
 
 import albumDetails from '../assets/data/albumDetails';
 import AlbumHeader from '../components/AlbumHeader';
+import PlayerWidget from '../components/PlayerWidget';
 import SongListItem from '../components/SongListItem';
 
 
@@ -15,13 +16,15 @@ export default function AlbumScreen() {
 
   return (
     <View style={styles.container}>
-     
+     {/* render all songs */}
       <FlatList
         data={albumDetails.songs}
         renderItem={({item})=><SongListItem song={item}/>}
         keyExtractor={item=>item.id}
-        ListHeaderComponent={AlbumHeader}
+        // albumHeader component
+        ListHeaderComponent={(<AlbumHeader album={albumDetails}/>)}
       />
+     
      
       
       

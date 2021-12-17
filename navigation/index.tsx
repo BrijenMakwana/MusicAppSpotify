@@ -19,6 +19,7 @@ import LinkingConfiguration from './LinkingConfiguration';
 
 import { Entypo,EvilIcons,FontAwesome5 } from '@expo/vector-icons';
 import AlbumScreen from '../screens/AlbumScreen';
+import PlayerWidget from '../components/PlayerWidget';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -74,7 +75,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Search"
-        component={AlbumScreen}
+        component={HomeScreen}
         options={{
           title: 'Search',
           tabBarIcon: ({ color }) => <EvilIcons name="search" size={30} color={color} style={{ marginBottom: -3 }}/>,

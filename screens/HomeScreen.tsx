@@ -14,11 +14,12 @@ import albumCategories from '../assets/data/albumCategories';
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
+      {/* render all categories in flatlist */}
      <FlatList
-      data={albumCategories}
-      renderItem={({item})=><AlbumCategory albumCategory={item}/>}
-      keyExtractor={item => item.id}
-      showsVerticalScrollIndicator={false}
+        data={albumCategories}
+        renderItem={({item})=><AlbumCategory albumCategory={item}/>}
+        keyExtractor={item => item.id}
+        showsVerticalScrollIndicator={false}
       />
       
       
