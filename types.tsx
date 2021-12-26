@@ -40,10 +40,12 @@ export type Album ={
   numberOfLikes: number;
   imageUri: string;
   artistsHeadline: string;
+  songs: Song[]
 }
 
 export type Song ={
   id: string;
+  uri: string;
   imageUri: string;
   title: string;
   artist: string;

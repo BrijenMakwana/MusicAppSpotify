@@ -21,6 +21,9 @@ import { Entypo,EvilIcons,FontAwesome5 } from '@expo/vector-icons';
 import AlbumScreen from '../screens/AlbumScreen';
 import PlayerWidget from '../components/PlayerWidget';
 
+
+
+
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
     <NavigationContainer
@@ -60,7 +63,7 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}>

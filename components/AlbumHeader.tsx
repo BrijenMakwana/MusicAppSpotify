@@ -3,8 +3,7 @@ import React, { useEffect } from 'react';
 import { FlatList, StyleSheet, View,Image,Text, Button, TouchableOpacity } from 'react-native';
 import {Album} from '../types';
 
-import albumDetails from '../assets/data/albumDetails';
-import SongListItem from '../components/SongListItem';
+
 
 export type AlbumHeaderProps={
   album: Album
@@ -18,13 +17,17 @@ export default function AlbumHeader(props: AlbumHeaderProps) {
   return (
     // album header
       <View style={styles.albumContainer}>
+
+        {/* album cover photo */}
         <Image
           source={{
             uri: props.album.imageUri
           }}
 
-          style={styles.album}
+          style={styles.albumPhoto}
         />
+
+        {/* album name and other details.. */}
         <Text style={styles.albumName}>{props.album.name}</Text>
         <Text style={styles.by}>BY {props.album.by} . {props.album.numberOfLikes} LIKES</Text>
         <TouchableOpacity>
@@ -45,7 +48,7 @@ const styles = StyleSheet.create({
     marginBottom:15,
     marginTop:20
   },
-  album:{
+  albumPhoto:{
     height:170,
     width:170
   },

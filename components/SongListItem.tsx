@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { StyleSheet,Text, View,Image } from 'react-native';
 
 
-import albumDetails from '../assets/data/albumDetails';
 import { Song } from '../types';
 
 export type SongListItemProps = {
@@ -39,6 +38,13 @@ const styles = StyleSheet.create({
     justifyContent:"center",
     marginTop:20
   },
+  songDetails:{
+    marginLeft:20,
+    alignItems:"flex-start",
+    justifyContent:"center",
+    flex:1
+  },
+
   title: {
     fontSize: 20,
     color:"white",
@@ -52,13 +58,7 @@ const styles = StyleSheet.create({
     color:"lightgray",
     marginTop:5,
     fontSize: 15,
-  },
-  songDetails:{
-    marginLeft:20,
-    alignItems:"flex-start",
-    justifyContent:"center",
-    flex:1,
+  }
      
 
-  }
 });

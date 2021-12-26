@@ -14,17 +14,21 @@ export default function AlbumComponent(props: AlbumProps) {
 
   const navigation = useNavigation();
   const onPress = () =>{
-  navigation.navigate("Album",);
+  navigation.navigate("Album");
 }
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.container}>
+
+        {/* image for the album */}
       <Image
           source={{
               uri: props.album.imageUri
           }}
           style={styles.image}
       />
+
+      {/* artists of the album */}
         <Text style={styles.title} numberOfLines={2}>{props.album.artistsHeadline}</Text>
         
       </View>
@@ -37,16 +41,17 @@ const styles = StyleSheet.create({
     width:155,
     padding:11
     },
+  image:{
+    width:140,
+    height:140,
+      
+    },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     color:"gray",
     marginTop:15
   },
-  image:{
-    width:140,
-    height:140,
-    
-  }
-  ,
+  
+  
 });

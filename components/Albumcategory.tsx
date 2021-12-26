@@ -18,7 +18,7 @@ export type AlbumCategoryProps={
 
 export default function AlbumCategory(props: AlbumCategoryProps) {
   return (
-      <View>
+      <View style={styles.container}>
         {/* category title */}
           <Text style={styles.title}>{props.albumCategory.title}</Text>
           {/* render all album component */}
@@ -36,10 +36,7 @@ export default function AlbumCategory(props: AlbumCategoryProps) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width:155
+    flex: 1
   },
   title: {
     fontSize: 20,
@@ -47,11 +44,5 @@ const styles = StyleSheet.create({
     color:"white",
     marginVertical:10,
     marginLeft:10
-  },
-  image:{
-    width:"100%",
-    height:155
-    
   }
-  ,
 });
