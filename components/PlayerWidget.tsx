@@ -67,8 +67,6 @@ export default function PlayerWidget(props: SongListItemProps) {
   },[])
 
   return (
-    <View style={{bottom:75,position:"absolute" }}>
-        <View style={[styles.progress,{width: (getProgress()).toString() + "%"}]}/>
         <View style={styles.container}>
           
         {/* song cover photo */}
@@ -97,24 +95,20 @@ export default function PlayerWidget(props: SongListItemProps) {
             </View>
         
       
-    </View>
-    </View>
-   
+    </View>   
   );
 }
 
 const styles = StyleSheet.create({
 
-  progress:{
-    backgroundColor: "#1BB75B",
-    height: 3
-  },
   container: {
     flexDirection:"row",
     justifyContent:"space-between",
     backgroundColor:"#282828",
     height:55,
     width:"100%",
+    bottom:75,
+    position:"absolute"
     
     
   },
@@ -141,7 +135,6 @@ const styles = StyleSheet.create({
   buttons:{
     flexDirection:"row",
     alignItems:"center",
-    flex: 1
 }
         
 });
